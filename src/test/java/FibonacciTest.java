@@ -1,5 +1,7 @@
 import org.junit.jupiter.api.Test;
 
+import java.math.BigInteger;
+
 import static org.junit.jupiter.api.Assertions.*;
 
 /*
@@ -16,7 +18,7 @@ import static org.junit.jupiter.api.Assertions.*;
 class FibonacciTest {
 
     @Test
-    public void testComputeReturnZeroIfTheNumberIsZero() {
+    public void testComputeReturnsZeroIfTheNumberIsZero() {
         Fibonacci fibonacci = new Fibonacci();
 
         int expectedValue = 0;
@@ -26,7 +28,7 @@ class FibonacciTest {
     }
 
     @Test
-    public void testComputeReturnOneIfTheNumberIsOne(){
+    public void testComputeReturnsOneIfTheNumberIsOne(){
         Fibonacci fibonacci = new Fibonacci();
 
         int expectedValue = 1;
@@ -36,7 +38,7 @@ class FibonacciTest {
     }
 
     @Test
-    public void testComputeReturnOneIfTheNumberIsTwo(){
+    public void testComputeReturnsOneIfTheNumberIsTwo(){
         Fibonacci fibonacci = new Fibonacci();
 
         int expectedValue = 1;
@@ -46,7 +48,7 @@ class FibonacciTest {
     }
 
     @Test
-    public void testComputeReturnTwoIfTheNumberIsThree(){
+    public void testComputeReturnsTwoIfTheNumberIsThree(){
         Fibonacci fibonacci = new Fibonacci();
 
         int expectedValue = 2;
@@ -56,7 +58,7 @@ class FibonacciTest {
     }
 
     @Test
-    public void testComputeReturnThreeIfTheNumberIsFour(){
+    public void testComputeReturnsThreeIfTheNumberIsFour(){
         Fibonacci fibonacci = new Fibonacci();
 
         int expectedValue = 3;
@@ -70,5 +72,11 @@ class FibonacciTest {
         var fibonacci = new Fibonacci();
         assertThrows(RuntimeException.class, () -> fibonacci.compute(-1)) ;
 
+    }
+
+    @Test
+    public void testComputeThroesExceptionIfTheNumberIsGratherThanFortysix(){
+        var fibonacci = new Fibonacci();
+        assertThrows(RuntimeException.class, () -> fibonacci.compute(47)) ;
     }
 }

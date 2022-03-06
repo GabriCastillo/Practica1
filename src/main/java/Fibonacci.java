@@ -11,6 +11,9 @@ public class Fibonacci {
         if (fibo < 0) {
             throw new RuntimeException("numero negativo");//comentario
         }
+        if (fibo > 46) {
+            throw new RuntimeException("Resultado muy grande para ser calculado");//comentario
+        }
 
         if (fibo == 0) {
             return 0;
